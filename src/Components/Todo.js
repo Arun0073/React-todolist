@@ -15,6 +15,7 @@ export const Todo = ({ task, toggleComplete, deleteTodo, editTodo }) => {
       <div>
         <FontAwesomeIcon
           icon={faPenToSquare}
+          style={{cursor:"pointer"}}
           onClick={() => editTodo(task.id)}
         />
         <FontAwesomeIcon icon={faTrash} onClick={() => deleteTodo(task.id)} />

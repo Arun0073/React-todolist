@@ -12,11 +12,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.App {
   text-align: center;
 }
+
 
 h1 {
   color: #fff;
@@ -35,13 +33,33 @@ h1 {
   width: 100%;
   margin-bottom: 1rem;
 }
+.search{
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.search-input{
+  outline: none;
+  background: none;
+  border: 1px solid #8758ff;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  width: 300px;
+  color: #fff;
+}
+.search-button{
+  background: #8758ff;
+  color: #fff;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+}
 
 .todo-input {
   outline: none;
   background: none;
   border: 1px solid #8758ff;
   padding: 0.5rem 1rem;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   margin-bottom: 2rem;
   width: 300px;
   color: #fff;
@@ -55,7 +73,7 @@ h1 {
   background: #8758ff;
   color: #fff;
   border: none;
-  padding: 0.55rem;
+  padding: 0.56rem;
   cursor: pointer;
 }
 
@@ -72,6 +90,7 @@ h1 {
 
 .fa-trash {
   margin-left: 0.75rem;
+  cursor: pointer;
 }
 
 .incompleted {
