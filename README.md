@@ -1,70 +1,75 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#React-ToDoList
 
-## Available Scripts
+This application is built using React with Material UI.
 
-In the project directory, you can run:
+This application uses basic concepts of HTML,CSS along with state management libraries of React.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## System Design
 
-### `npm test`
+#### Architecture
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The application follows a single-page application (SPA) architecture built with React.
 
-### `npm run build`
+#### Components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- App: The main component that holds the state and renders other components.
+- TodoList: Displays the list of todo items.
+- TodoItem: Represents an individual task with options to complete or delete the task.
+- AddTodo: A form component for adding new tasks.
+- Search: A input field that allows user to search based on URL parameters.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### State Management
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+State management is primarily handled using React's useState  hook along with useLocation and useNavigate hook from react-router-dom. 
 
-### `npm run eject`
+#### Data Flow
+Data flows in a unidirectional manner:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Adding a Task: The AddTodo component triggers a state update in the App component.
+- Displaying Tasks: The TodoList component receives the list of tasks as props from the App component and renders TodoItem components.
+- Completing/Deleting Tasks: Actions in the TodoItem component trigger state updates in the App component, which in turn re-renders the updated task list.
+- Editing a Task: The EditTodo component allows users to edit a task, storing the previous task version and the timestamp of the edit.
+- Searching Tasks: The TodoList component handles URL parameter-based search to filter and display tasks.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Styling
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Styling is handled using CSS modules or styled-components to ensure styles are scoped locally and do not conflict with each other.
+## Features
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Add a Task to list ✅
+- Editing the task 🌟
+- Once completed the task will be marked 🚩
+- Delete the task ⚛️
+- Search using URL Parameters 🔍
+- user can view Previous Tasks with their Timestamps 🖋️
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Run Locally
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Clone the project
 
-### Code Splitting
+```bash
+  git clone https://github.com/Arun0073/React-todolist
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Go to the project directory
 
-### Analyzing the Bundle Size
+```bash
+  cd my-project
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Install dependencies
 
-### Making a Progressive Web App
+```bash
+  npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Start the server
 
-### Advanced Configuration
+```bash
+  npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
