@@ -10,11 +10,20 @@ uuidv4();
 export const TodoBox = () => {
   const [todos, setTodos] = useState([]);
   const location = useLocation();
+  console.log(todos);
 
   const addTodo = (todo) => {
     setTodos([
       ...todos,
-      { id: uuidv4(), task: todo, completed: false, isEditing: false },
+      {
+        id: uuidv4(),
+        task: todo,
+        completed: false,
+        isEditing: false,
+        timestamp: "",
+        isEdited: false,
+        prevTasks: [],
+      },
     ]);
   };
 
@@ -33,7 +42,9 @@ export const TodoBox = () => {
   const editTodo = (id) => {
     setTodos(
       todos.map((todo) =>
-        todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo
+        todo.id === id
+          ? { ...todo, isEditing: !todo.isEditing, isEdited: !todo.isEdited }
+          : todo
       )
     );
   };
@@ -41,7 +52,18 @@ export const TodoBox = () => {
   const editTask = (task, id) => {
     setTodos(
       todos.map((todo) =>
-        todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo
+        todo.id === id
+          ? {
+              ...todo,
+              task,
+              isEditing: !todo.isEditing,
+              timestamp: new Date().toISOString(),
+              prevTasks: [
+                ...todo.prevTasks,
+                { task: todo.task, timestamp: todo.timestamp },
+              ],
+            }
+          : todo
       )
     );
   };
