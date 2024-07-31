@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 
 export const TodoForm = ({ addTodo }) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(""); // state to set the value of the tasks into list
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { //function to add tasks to todo list
     e.preventDefault();
     addTodo(value);
 
