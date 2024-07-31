@@ -29,11 +29,11 @@ export const Todo = ({ task, toggleComplete, deleteTodo, editTodo }) => {
             <Typography>
               Last updated:{" "}
               {task.timestamp
-                ? new Date(task.timestamp).toLocaleString()
+                ? new Date(task.timestamp).toLocaleString() // displaying the time when user updated the task
                 : "N/A"}
             </Typography>
 
-            {task.prevTasks.map((prevTask, index) => (
+            {task.prevTasks.map((prevTask, index) => ( // displaying previous tasks to user before updation
               <Typography key={index}>
                 Previous Task: {prevTask.task}
               </Typography>
@@ -42,7 +42,7 @@ export const Todo = ({ task, toggleComplete, deleteTodo, editTodo }) => {
         </Accordion>
       ) : (
         <p
-          onClick={() => toggleComplete(task.id)}
+          onClick={() => toggleComplete(task.id)} //function to update the task when completed
           className={`${task.completed ? "completed" : ""}`}
         >
           {task.task}
@@ -52,9 +52,12 @@ export const Todo = ({ task, toggleComplete, deleteTodo, editTodo }) => {
         <FontAwesomeIcon
           icon={faPenToSquare}
           style={{ cursor: "pointer" }}
-          onClick={() => editTodo(task.id)}
+          onClick={() => editTodo(task.id)} // function to edit the task
         />
-        <FontAwesomeIcon icon={faTrash} onClick={() => deleteTodo(task.id)} />
+        <FontAwesomeIcon 
+          icon={faTrash} 
+          onClick={() => deleteTodo(task.id)} //function to delete the task
+/>
       </div>
     </div>
   );
