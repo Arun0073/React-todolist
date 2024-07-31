@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
 
-export const EditTodoForm = ({ editTodo, task }) => {
-  const [value, setValue] = useState(task.task);
+export const EditTodoForm = ({ editTodo, task }) => { 
+  const [value, setValue] = useState(task.task); //state to set vlaue of task coming as prop
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { //function to update the task from previous task
     e.preventDefault();
     editTodo(value, task.id);
 
