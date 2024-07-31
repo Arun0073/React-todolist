@@ -12,7 +12,7 @@ export const TodoBox = () => {
   const location = useLocation();
   console.log(todos);
 
-  const addTodo = (todo) => {
+  const addTodo = (todo) => { //adding the task to list 
     setTodos([
       ...todos,
       {
@@ -27,7 +27,7 @@ export const TodoBox = () => {
     ]);
   };
 
-  const toggleComplete = (id) => {
+  const toggleComplete = (id) => { //updating the task once completed
     setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
@@ -35,11 +35,11 @@ export const TodoBox = () => {
     );
   };
 
-  const deleteTodo = (id) => {
+  const deleteTodo = (id) => { //deleting the task to list
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  const editTodo = (id) => {
+  const editTodo = (id) => { //editing the current todo list
     setTodos(
       todos.map((todo) =>
         todo.id === id
@@ -49,7 +49,7 @@ export const TodoBox = () => {
     );
   };
 
-  const editTask = (task, id) => {
+  const editTask = (task, id) => { //editing the task to list
     setTodos(
       todos.map((todo) =>
         todo.id === id
